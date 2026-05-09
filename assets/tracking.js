@@ -1,5 +1,5 @@
 /* =========================================================
- * Tracking — Guia Interativo Europa
+ * Tracking, Guia Interativo Europa
  *
  * Faz 3 coisas:
  * 1. Captura UTMs / fbclid / gclid da URL atual e guarda em sessionStorage
@@ -82,8 +82,8 @@
           fbq('track', 'InitiateCheckout', {
             value: PRODUCT_VALUE,
             currency: CURRENCY,
-            content_name: 'Pack 4 cidades — Guia Interativo Europa',
-            content_category: 'Infoproduto · Guia de viagem',
+            content_name: 'Pack 4 cidades, Guia Interativo Europa',
+            content_category: 'Infoproduto, Guia de viagem',
           });
         }
 
