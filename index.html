@@ -51,12 +51,60 @@ tailwind.config = {
 <style>
   html { scroll-behavior: smooth; }
   body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
-  .cta-glow { box-shadow: 0 14px 36px -12px rgba(243, 107, 26, .55); }
+
+  /* CTA glow: sombra colorida embaixo */
+  .cta-glow { box-shadow: 0 14px 36px -12px rgba(243, 107, 26, .55); transition: box-shadow .3s ease, transform .2s ease; }
+  .cta-glow:hover { box-shadow: 0 20px 44px -12px rgba(243, 107, 26, .7); transform: translateY(-2px) scale(1.02); }
+  .cta-glow:active { transform: translateY(0) scale(0.99); }
+
+  /* FAQ details/summary */
   details > summary { list-style: none; cursor: pointer; }
   details > summary::-webkit-details-marker { display: none; }
   details[open] .faq-icon { transform: rotate(45deg); }
   .faq-icon { transition: transform .2s ease; display: inline-block; }
+  details.faq-item { transition: box-shadow .2s ease, transform .2s ease; }
+  details.faq-item:hover { box-shadow: 0 10px 20px -10px rgba(24, 36, 59, .15); transform: translateY(-1px); }
+
+  /* Headlines */
   .h-display { letter-spacing: -0.02em; line-height: 1.05; font-weight: 800; }
+
+  /* Hover lift genérico */
+  .lift { transition: transform .25s ease, box-shadow .25s ease; }
+  .lift:hover { transform: translateY(-4px); box-shadow: 0 18px 30px -16px rgba(24, 36, 59, .18); }
+
+  /* Card de comparação (laranja não levanta a sombra escura, ajusta) */
+  .lift-orange { transition: transform .25s ease, box-shadow .25s ease; }
+  .lift-orange:hover { transform: translateY(-4px); box-shadow: 0 22px 40px -16px rgba(243, 107, 26, .55); }
+
+  /* Reveal on scroll */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.is-visible { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .cta-glow:hover { transform: none; }
+    .lift:hover, .lift-orange:hover { transform: none; }
+  }
+
+  /* Pulse no badge de economia */
+  @keyframes softPulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, .35); }
+    50%      { transform: scale(1.04); box-shadow: 0 0 0 12px rgba(16, 185, 129, 0); }
+  }
+  .pulse-soft { animation: softPulse 2.4s ease-in-out infinite; }
+
+  /* Wiggle no emoji 🔥 */
+  @keyframes flameWiggle {
+    0%, 100% { transform: rotate(-3deg) scale(1); }
+    50%      { transform: rotate(3deg) scale(1.08); }
+  }
+  .flame { display: inline-block; animation: flameWiggle 1.6s ease-in-out infinite; transform-origin: center bottom; }
+
+  /* Pulse leve no preço grande */
+  @keyframes pricePulse {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.03); }
+  }
+  .price-pulse { animation: pricePulse 3.2s ease-in-out infinite; transform-origin: center; }
 </style>
 
 <!-- ============================================ -->
@@ -126,7 +174,7 @@ src="https://www.facebook.com/tr?id=2820358838311301&ev=PageView&noscript=1"/></
   <div class="max-w-5xl mx-auto px-5 py-14 sm:py-20">
     <div class="grid sm:grid-cols-2 gap-5 sm:gap-7">
 
-      <div class="bg-white rounded-3xl p-7 sm:p-9 shadow-sm">
+      <div class="bg-white rounded-3xl p-7 sm:p-9 shadow-sm lift">
         <h3 class="flex items-center gap-3 text-xl sm:text-2xl font-extrabold text-ink mb-6">
           <span class="text-2xl">❌</span> Chega de:
         </h3>
@@ -139,7 +187,7 @@ src="https://www.facebook.com/tr?id=2820358838311301&ev=PageView&noscript=1"/></
         </ul>
       </div>
 
-      <div class="bg-orange rounded-3xl p-7 sm:p-9 text-white shadow-lg">
+      <div class="bg-orange rounded-3xl p-7 sm:p-9 text-white shadow-lg lift-orange">
         <h3 class="flex items-center gap-3 text-xl sm:text-2xl font-extrabold mb-6">
           <span class="text-2xl">✨</span> Com os mapas você:
         </h3>
@@ -162,14 +210,14 @@ src="https://www.facebook.com/tr?id=2820358838311301&ev=PageView&noscript=1"/></
     <p class="text-center text-muted mt-4 text-lg">Listas organizadas por categoria, prontas para salvar:</p>
 
     <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4">
-      <div class="bg-white rounded-2xl py-5 px-3 text-center font-semibold shadow-sm">☕ Cafeterias</div>
-      <div class="bg-white rounded-2xl py-5 px-3 text-center font-semibold shadow-sm">🍝 Restaurantes</div>
-      <div class="bg-white rounded-2xl py-5 px-3 text-center font-semibold shadow-sm">🍷 Bares</div>
-      <div class="bg-white rounded-2xl py-5 px-3 text-center font-semibold shadow-sm">🎉 Baladas</div>
-      <div class="bg-white rounded-2xl py-5 px-3 text-center font-semibold shadow-sm">🌇 Rooftops</div>
-      <div class="bg-white rounded-2xl py-5 px-3 text-center font-semibold shadow-sm">🍦 Gelaterias</div>
-      <div class="bg-white rounded-2xl py-5 px-3 text-center font-semibold shadow-sm">🎨 Museus</div>
-      <div class="bg-white rounded-2xl py-5 px-3 text-center font-semibold shadow-sm">👗 Brechós</div>
+      <div class="bg-white rounded-2xl py-5 px-3 text-center font-semibold shadow-sm lift">☕ Cafeterias</div>
+      <div class="bg-white rounded-2xl py-5 px-3 text-center font-semibold shadow-sm lift">🍝 Restaurantes</div>
+      <div class="bg-white rounded-2xl py-5 px-3 text-center font-semibold shadow-sm lift">🍷 Bares</div>
+      <div class="bg-white rounded-2xl py-5 px-3 text-center font-semibold shadow-sm lift">🎉 Baladas</div>
+      <div class="bg-white rounded-2xl py-5 px-3 text-center font-semibold shadow-sm lift">🌇 Rooftops</div>
+      <div class="bg-white rounded-2xl py-5 px-3 text-center font-semibold shadow-sm lift">🍦 Gelaterias</div>
+      <div class="bg-white rounded-2xl py-5 px-3 text-center font-semibold shadow-sm lift">🎨 Museus</div>
+      <div class="bg-white rounded-2xl py-5 px-3 text-center font-semibold shadow-sm lift">👗 Brechós</div>
     </div>
 
     <p class="text-center mt-12 text-ink/85 text-lg font-semibold">
@@ -184,17 +232,17 @@ src="https://www.facebook.com/tr?id=2820358838311301&ev=PageView&noscript=1"/></
     <h2 class="h-display text-3xl sm:text-5xl">Quanto isso economiza? 💰</h2>
 
     <div class="mt-12 grid sm:grid-cols-3 gap-4 sm:gap-6">
-      <div class="bg-navyCard border border-navyBorder rounded-2xl p-7 text-center">
+      <div class="bg-navyCard border border-navyBorder rounded-2xl p-7 text-center lift">
         <p class="text-4xl sm:text-5xl font-extrabold text-orange">€25</p>
         <p class="mt-3 text-white/90 font-medium">Uma refeição ruim em Paris</p>
         <p class="mt-1 text-white/40 text-sm">desperdiçados</p>
       </div>
-      <div class="bg-navyCard border border-navyBorder rounded-2xl p-7 text-center">
+      <div class="bg-navyCard border border-navyBorder rounded-2xl p-7 text-center lift">
         <p class="text-4xl sm:text-5xl font-extrabold text-orange">€15</p>
         <p class="mt-3 text-white/90 font-medium">Um deslocamento desnecessário</p>
         <p class="mt-1 text-white/40 text-sm">jogados fora</p>
       </div>
-      <div class="bg-navyCard border border-navyBorder rounded-2xl p-7 text-center">
+      <div class="bg-navyCard border border-navyBorder rounded-2xl p-7 text-center lift">
         <p class="text-4xl sm:text-5xl font-extrabold text-orange">2h</p>
         <p class="mt-3 text-white/90 font-medium">Pesquisando onde comer</p>
         <p class="mt-1 text-white/40 text-sm">tempo que não volta</p>
@@ -221,22 +269,22 @@ src="https://www.facebook.com/tr?id=2820358838311301&ev=PageView&noscript=1"/></
     </h3>
 
     <div class="mt-12 grid sm:grid-cols-2 gap-5">
-      <div class="bg-white rounded-2xl p-6 shadow-sm">
+      <div class="bg-white rounded-2xl p-6 shadow-sm lift">
         <p class="text-3xl mb-3">🍴</p>
         <p class="font-extrabold text-lg text-ink">Restaurantes bons</p>
         <p class="mt-1 text-muted">A poucos minutos de onde você está</p>
       </div>
-      <div class="bg-white rounded-2xl p-6 shadow-sm">
+      <div class="bg-white rounded-2xl p-6 shadow-sm lift">
         <p class="text-3xl mb-3">☕</p>
         <p class="font-extrabold text-lg text-ink">Cafés perto do hotel</p>
         <p class="mt-1 text-muted">Para começar o dia sem stress</p>
       </div>
-      <div class="bg-white rounded-2xl p-6 shadow-sm">
+      <div class="bg-white rounded-2xl p-6 shadow-sm lift">
         <p class="text-3xl mb-3">🍸</p>
         <p class="font-extrabold text-lg text-ink">Bares na região</p>
         <p class="mt-1 text-muted">Onde você vai passar a noite</p>
       </div>
-      <div class="bg-white rounded-2xl p-6 shadow-sm">
+      <div class="bg-white rounded-2xl p-6 shadow-sm lift">
         <p class="text-3xl mb-3">🎯</p>
         <p class="font-extrabold text-lg text-ink">Atrações no trajeto</p>
         <p class="mt-1 text-muted">Que fazem sentido no mesmo percurso</p>
@@ -257,11 +305,11 @@ src="https://www.facebook.com/tr?id=2820358838311301&ev=PageView&noscript=1"/></
       <h2 class="h-display text-3xl sm:text-4xl mt-5 text-ink">Você também recebe:</h2>
     </div>
     <div class="mt-10 grid sm:grid-cols-2 gap-4">
-      <div class="bg-white rounded-2xl p-5 shadow-sm font-medium flex items-center gap-3"><span class="text-2xl">📱</span> Como salvar offline</div>
-      <div class="bg-white rounded-2xl p-5 shadow-sm font-medium flex items-center gap-3"><span class="text-2xl">⚡</span> Como usar no ritmo real do dia</div>
-      <div class="bg-white rounded-2xl p-5 shadow-sm font-medium flex items-center gap-3"><span class="text-2xl">🏨</span> Como escolher hospedagem estratégica</div>
-      <div class="bg-white rounded-2xl p-5 shadow-sm font-medium flex items-center gap-3"><span class="text-2xl">🎟️</span> Dicas de passeios no GetYourGuide</div>
-      <div class="bg-white rounded-2xl p-5 shadow-sm font-medium flex items-center gap-3 sm:col-span-2"><span class="text-2xl">📲</span> Apps essenciais para viagem</div>
+      <div class="bg-white rounded-2xl p-5 shadow-sm font-medium flex items-center gap-3 lift"><span class="text-2xl">📱</span> Como salvar offline</div>
+      <div class="bg-white rounded-2xl p-5 shadow-sm font-medium flex items-center gap-3 lift"><span class="text-2xl">⚡</span> Como usar no ritmo real do dia</div>
+      <div class="bg-white rounded-2xl p-5 shadow-sm font-medium flex items-center gap-3 lift"><span class="text-2xl">🏨</span> Como escolher hospedagem estratégica</div>
+      <div class="bg-white rounded-2xl p-5 shadow-sm font-medium flex items-center gap-3 lift"><span class="text-2xl">🎟️</span> Dicas de passeios no GetYourGuide</div>
+      <div class="bg-white rounded-2xl p-5 shadow-sm font-medium flex items-center gap-3 sm:col-span-2 lift"><span class="text-2xl">📲</span> Apps essenciais para viagem</div>
     </div>
   </div>
 </section>
@@ -269,18 +317,18 @@ src="https://www.facebook.com/tr?id=2820358838311301&ev=PageView&noscript=1"/></
 <!-- =============== OFERTA (LARANJA) =============== -->
 <section id="oferta" class="bg-orange">
   <div class="max-w-3xl mx-auto px-5 py-20 sm:py-24">
-    <h2 class="h-display text-4xl sm:text-5xl text-white text-center">Oferta Especial 🔥</h2>
+    <h2 class="h-display text-4xl sm:text-5xl text-white text-center">Oferta Especial <span class="flame">🔥</span></h2>
 
     <div class="mt-10 bg-white rounded-3xl p-8 sm:p-12 shadow-2xl">
       <p class="text-center text-lg sm:text-xl text-ink/85">Listas das <strong>5 cidades</strong></p>
 
       <div class="mt-5 flex items-baseline justify-center gap-4">
         <span class="text-2xl sm:text-3xl text-muted line-through">R$188</span>
-        <span class="text-5xl sm:text-7xl font-extrabold text-orange">R$127</span>
+        <span class="text-5xl sm:text-7xl font-extrabold text-orange price-pulse">R$127</span>
       </div>
 
       <div class="mt-5 flex justify-center">
-        <span class="inline-flex items-center gap-2 bg-successBg text-successText font-bold px-5 py-2 rounded-full text-sm">💰 Economia de R$61</span>
+        <span class="inline-flex items-center gap-2 bg-successBg text-successText font-bold px-5 py-2 rounded-full text-sm pulse-soft">💰 Economia de R$61</span>
       </div>
 
       <p class="mt-6 text-center text-sm text-muted">Se compradas separadamente: R$47 cada → R$235 total</p>
@@ -307,27 +355,27 @@ src="https://www.facebook.com/tr?id=2820358838311301&ev=PageView&noscript=1"/></
     <h2 class="h-display text-3xl sm:text-4xl text-center text-ink">Perguntas Frequentes 🤔</h2>
 
     <div class="mt-10 space-y-3">
-      <details class="bg-white rounded-2xl shadow-sm px-6 py-5">
+      <details class="bg-white rounded-2xl shadow-sm px-6 py-5 faq-item">
         <summary class="flex justify-between items-center font-bold text-ink">Isso é um app? <span class="faq-icon text-orange text-2xl leading-none">+</span></summary>
         <p class="mt-3 text-ink/80">Não. Você recebe listas prontas pra salvar dentro do <strong>Google Maps</strong>, na sua conta.</p>
       </details>
 
-      <details class="bg-white rounded-2xl shadow-sm px-6 py-5">
+      <details class="bg-white rounded-2xl shadow-sm px-6 py-5 faq-item">
         <summary class="flex justify-between items-center font-bold text-ink">Preciso de internet pra usar? <span class="faq-icon text-orange text-2xl leading-none">+</span></summary>
         <p class="mt-3 text-ink/80">Você pode salvar o mapa <strong>offline</strong> (tem passo a passo no material).</p>
       </details>
 
-      <details class="bg-white rounded-2xl shadow-sm px-6 py-5">
+      <details class="bg-white rounded-2xl shadow-sm px-6 py-5 faq-item">
         <summary class="flex justify-between items-center font-bold text-ink">Consigo usar durante a viagem mesmo, sem planejar tudo antes? <span class="faq-icon text-orange text-2xl leading-none">+</span></summary>
         <p class="mt-3 text-ink/80">Sim. O foco é decidir por <strong>proximidade</strong>, no tempo real do dia.</p>
       </details>
 
-      <details class="bg-white rounded-2xl shadow-sm px-6 py-5">
+      <details class="bg-white rounded-2xl shadow-sm px-6 py-5 faq-item">
         <summary class="flex justify-between items-center font-bold text-ink">Como as listas são organizadas? <span class="faq-icon text-orange text-2xl leading-none">+</span></summary>
         <p class="mt-3 text-ink/80">Por <strong>cidade, categoria</strong>, pra evitar lugares espalhados e deslocamento desnecessário.</p>
       </details>
 
-      <details class="bg-white rounded-2xl shadow-sm px-6 py-5">
+      <details class="bg-white rounded-2xl shadow-sm px-6 py-5 faq-item">
         <summary class="flex justify-between items-center font-bold text-ink">Como recebo? <span class="faq-icon text-orange text-2xl leading-none">+</span></summary>
         <p class="mt-3 text-ink/80">Acesso <strong>imediato</strong> após a compra, com instruções de uso.</p>
       </details>
@@ -357,6 +405,29 @@ src="https://www.facebook.com/tr?id=2820358838311301&ev=PageView&noscript=1"/></
     <p class="mt-1">Pagamento processado pela Hotmart</p>
   </div>
 </footer>
+
+<!-- Reveal on scroll: fade-in suave nas seções abaixo da dobra -->
+<script>
+(function () {
+  if (!('IntersectionObserver' in window)) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  // Aplica .reveal em todas as sections (menos a primeira, que é hero acima da dobra)
+  var sections = document.querySelectorAll('section');
+  sections.forEach(function (s, i) { if (i > 0) s.classList.add('reveal'); });
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('section.reveal').forEach(function (s) { io.observe(s); });
+})();
+</script>
 
 <!-- ============================================ -->
 <!-- TRACKING: UTMs + InitiateCheckout -->
