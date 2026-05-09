@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0f172a" />
+
+<title>Guia Interativo Europa — Os melhores lugares de Barcelona, Madrid, Roma, Paris e Amsterdã no seu Google Maps</title>
+<meta name="description" content="Listas curadas dos melhores restaurantes, cafeterias, bares e atrações em Barcelona, Madrid, Roma, Paris e Amsterdã — já organizadas no seu Google Maps. Acesso imediato por R$127." />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Guia Interativo Europa" />
+<meta property="og:description" content="Os melhores lugares de Barcelona, Madrid, Roma, Paris e Amsterdã já organizados no seu Google Maps." />
+<meta property="og:locale" content="pt_BR" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📍%3C/text%3E%3C/svg%3E" />
+
+<!-- Tailwind via CDN (sem build) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink: '#0f172a',
+        cream: '#FAF7F2',
+        coral: '#E76F51',
+        coralDark: '#D45A3D',
+        sand: '#E9C46A',
+        navy: '#1E293B',
+      },
+      fontFamily: {
+        display: ['"Playfair Display"', 'Georgia', 'serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+      },
+    },
+  },
+};
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', system-ui, sans-serif; }
+  .font-display { font-family: 'Playfair Display', Georgia, serif; }
+  .cta-glow { box-shadow: 0 10px 30px -10px rgba(231, 111, 81, .55); }
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] .faq-icon { transform: rotate(45deg); }
+  .faq-icon { transition: transform .2s ease; }
+</style>
+
+<!-- ============================================ -->
+<!-- META PIXEL — Guia Interativo Europa -->
+<!-- ============================================ -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2820358838311301');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2820358838311301&ev=PageView&noscript=1"/></noscript>
+<!-- END META PIXEL -->
+
+</head>
+
+<body class="bg-cream text-ink antialiased">
+
+<!-- =============== HERO =============== -->
+<section class="relative overflow-hidden bg-cream">
+  <div class="max-w-5xl mx-auto px-5 pt-12 pb-10 sm:pt-20 sm:pb-16 text-center">
+    <p class="uppercase tracking-[0.2em] text-xs sm:text-sm text-coralDark font-semibold mb-4">📍 Barcelona · Madrid · Roma · Paris · Amsterdã</p>
+    <h1 class="font-display text-4xl sm:text-6xl leading-[1.05] font-bold text-ink">
+      Os melhores lugares da Europa,<br class="hidden sm:block"/>
+      já organizados no seu <span class="text-coral">Google Maps</span>.
+    </h1>
+    <p class="mt-6 text-lg sm:text-xl text-ink/80 max-w-2xl mx-auto">
+      Você recebe mapas prontos, organizados por categoria, direto na sua conta do Google Maps. Pronto pra usar no destino — em tempo real, no celular, sem precisar de internet.
+    </p>
+    <div class="mt-10">
+      <a href="#oferta" data-cta="hero" class="cta-btn inline-flex items-center justify-center gap-2 bg-coral hover:bg-coralDark text-white font-semibold text-lg px-8 py-4 rounded-full transition-colors cta-glow">
+        Quero as listas no meu Google Maps →
+      </a>
+      <p class="mt-3 text-sm text-ink/60">Acesso imediato após a compra</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== DOR =============== -->
+<section class="bg-white">
+  <div class="max-w-3xl mx-auto px-5 py-16 sm:py-20">
+    <div class="space-y-3 text-center text-xl sm:text-2xl font-medium text-ink/90">
+      <p>Já caiu em restaurante turístico caro e ruim?</p>
+      <p>Já atravessou a cidade porque salvou lugares espalhados?</p>
+      <p>Já perdeu 1 hora procurando restaurante em viagem?</p>
+    </div>
+    <div class="mt-12 text-center">
+      <p class="text-lg sm:text-xl text-ink/80">Viajar deveria ser experiência.</p>
+      <p class="text-lg sm:text-xl text-ink/80 mt-1">Mas muitas vezes vira pesquisa, indecisão e deslocamento desnecessário.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== SOLUÇÃO =============== -->
+<section class="bg-cream">
+  <div class="max-w-3xl mx-auto px-5 py-16 sm:py-20 text-center">
+    <h2 class="font-display text-3xl sm:text-5xl font-bold text-ink leading-tight">Agora imagine isso:</h2>
+    <p class="mt-6 text-lg sm:text-xl text-ink/85">
+      Os melhores lugares de <strong>Barcelona, Madrid, Roma, Paris e Amsterdã</strong> já organizados no seu Google Maps.
+    </p>
+    <p class="mt-4 text-lg sm:text-xl text-ink/85">
+      Você recebe mapas prontos, organizados por categoria. Tudo dentro da sua própria conta do Google Maps.
+    </p>
+    <p class="mt-6 text-lg sm:text-xl font-semibold text-coralDark">
+      Pronto pra usar no destino, no celular, em tempo real e sem precisar de internet.
+    </p>
+  </div>
+</section>
+
+<!-- =============== COMO FUNCIONA =============== -->
+<section class="bg-white">
+  <div class="max-w-4xl mx-auto px-5 py-16 sm:py-20">
+    <h2 class="font-display text-3xl sm:text-4xl font-bold text-center text-ink">Veja exatamente como funciona</h2>
+
+    <!-- Placeholder pro vídeo/imagens — ela troca depois -->
+    <div class="mt-10 aspect-[4/5] sm:aspect-video bg-cream border border-ink/10 rounded-2xl flex items-center justify-center text-ink/40 text-sm">
+      📱 Vídeo / mockup do Google Maps com pins
+    </div>
+
+    <ul class="mt-10 grid sm:grid-cols-2 gap-4 text-ink/85 text-base sm:text-lg">
+      <li class="flex gap-3"><span class="text-coral">📍</span> Mapa com os pins organizados</li>
+      <li class="flex gap-3"><span class="text-coral">📸</span> Fotos das listas</li>
+      <li class="flex gap-3"><span class="text-coral">🍽️</span> Restaurantes e cafeterias</li>
+      <li class="flex gap-3"><span class="text-coral">✈️</span> Uso real durante a viagem</li>
+    </ul>
+
+    <div class="mt-12 bg-cream border border-ink/10 rounded-2xl p-6 sm:p-8">
+      <p class="font-semibold text-ink mb-4">Nada de:</p>
+      <ul class="space-y-2 text-ink/80">
+        <li>❌ Ler 30 páginas de guia</li>
+        <li>❌ Montar roteiro complexo</li>
+        <li>❌ Pesquisar restaurante todo dia</li>
+        <li>❌ Perder tempo</li>
+        <li>❌ Cair em pegadinha de turista</li>
+      </ul>
+      <p class="mt-6 text-coralDark font-semibold text-lg">Você salva e usa em 2 minutos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== O QUE VOCÊ RECEBE =============== -->
+<section class="bg-cream">
+  <div class="max-w-4xl mx-auto px-5 py-16 sm:py-20">
+    <h2 class="font-display text-3xl sm:text-4xl font-bold text-center text-ink">O que você recebe</h2>
+    <p class="text-center text-ink/70 mt-3">Listas organizadas por categoria, em todas as cidades:</p>
+
+    <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <div class="bg-white rounded-xl py-4 px-3 text-center border border-ink/5">☕ Cafeterias</div>
+      <div class="bg-white rounded-xl py-4 px-3 text-center border border-ink/5">🍝 Restaurantes</div>
+      <div class="bg-white rounded-xl py-4 px-3 text-center border border-ink/5">🍷 Bares</div>
+      <div class="bg-white rounded-xl py-4 px-3 text-center border border-ink/5">🪩 Baladas</div>
+      <div class="bg-white rounded-xl py-4 px-3 text-center border border-ink/5">🌇 Rooftops</div>
+      <div class="bg-white rounded-xl py-4 px-3 text-center border border-ink/5">🍦 Gelaterias</div>
+      <div class="bg-white rounded-xl py-4 px-3 text-center border border-ink/5">🖼️ Museus e galerias</div>
+      <div class="bg-white rounded-xl py-4 px-3 text-center border border-ink/5">👗 Brechós</div>
+    </div>
+
+    <p class="text-center mt-10 text-ink/85 max-w-2xl mx-auto">
+      Tudo pensado pra reduzir deslocamento e maximizar experiência. Nada de restaurante turístico clichê — vivências autênticas pra você aproveitar cada cidade ao máximo.
+    </p>
+
+    <div class="mt-10 text-center">
+      <a href="#oferta" data-cta="o-que-recebe" class="cta-btn inline-flex items-center justify-center gap-2 bg-coral hover:bg-coralDark text-white font-semibold text-lg px-8 py-4 rounded-full transition-colors cta-glow">
+        Quero viajar sem perder tempo →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =============== QUANTO ECONOMIZA =============== -->
+<section class="bg-white">
+  <div class="max-w-3xl mx-auto px-5 py-16 sm:py-20 text-center">
+    <h2 class="font-display text-3xl sm:text-4xl font-bold text-ink">Quanto isso economiza?</h2>
+    <div class="mt-8 space-y-3 text-lg sm:text-xl text-ink/85">
+      <p>Uma refeição ruim em Paris → <strong>€25 desperdiçados</strong>.</p>
+      <p>Um deslocamento desnecessário → <strong>€15</strong>.</p>
+      <p>2 horas perdidas pesquisando → <strong>tempo que não volta</strong>.</p>
+    </div>
+    <p class="mt-10 text-xl sm:text-2xl font-semibold text-ink">
+      Por <span class="text-coral">R$127</span> você evita perder dinheiro e tempo durante toda a viagem.
+    </p>
+
+    <div class="mt-10">
+      <a href="#oferta" data-cta="economia" class="cta-btn inline-flex items-center justify-center gap-2 bg-coral hover:bg-coralDark text-white font-semibold text-lg px-8 py-4 rounded-full transition-colors cta-glow">
+        Quero as listas no meu Google Maps agora →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =============== EXEMPLO REAL =============== -->
+<section class="bg-cream">
+  <div class="max-w-3xl mx-auto px-5 py-16 sm:py-20">
+    <h3 class="font-display text-2xl sm:text-3xl font-bold text-ink text-center">Exemplo real do que você passa a ver no mapa:</h3>
+    <ul class="mt-8 space-y-3 text-lg text-ink/85">
+      <li class="flex gap-3"><span class="text-coral">→</span> Restaurantes bons a poucos minutos de onde você está</li>
+      <li class="flex gap-3"><span class="text-coral">→</span> Cafés perto do hotel</li>
+      <li class="flex gap-3"><span class="text-coral">→</span> Bares na região onde você vai passar a noite</li>
+      <li class="flex gap-3"><span class="text-coral">→</span> Atrações que fazem sentido no mesmo trajeto</li>
+    </ul>
+    <p class="text-center mt-10 text-xl sm:text-2xl font-semibold text-ink">
+      Menos deslocamento.<br/>
+      <span class="text-coral">Mais experiência de qualidade.</span>
+    </p>
+  </div>
+</section>
+
+<!-- =============== BÔNUS =============== -->
+<section class="bg-white">
+  <div class="max-w-3xl mx-auto px-5 py-16 sm:py-20">
+    <div class="text-center">
+      <span class="inline-block bg-sand/30 text-coralDark font-semibold uppercase tracking-wider text-xs px-4 py-2 rounded-full">🎁 Bônus inclusos</span>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-ink mt-4">Você também recebe:</h2>
+    </div>
+    <div class="mt-10 grid sm:grid-cols-2 gap-4">
+      <div class="bg-cream rounded-xl p-5 border border-ink/5">📥 Como salvar offline</div>
+      <div class="bg-cream rounded-xl p-5 border border-ink/5">⏱️ Como usar no ritmo real do dia</div>
+      <div class="bg-cream rounded-xl p-5 border border-ink/5">🏨 Como escolher hospedagem estrategicamente</div>
+      <div class="bg-cream rounded-xl p-5 border border-ink/5">🎫 Dicas de passeios no GetYourGuide</div>
+      <div class="bg-cream rounded-xl p-5 border border-ink/5 sm:col-span-2">📱 Apps essenciais para viagem</div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== OFERTA =============== -->
+<section id="oferta" class="bg-ink text-white">
+  <div class="max-w-3xl mx-auto px-5 py-20 sm:py-24 text-center">
+    <span class="inline-block bg-coral/20 text-coral font-semibold uppercase tracking-wider text-xs px-4 py-2 rounded-full">Oferta</span>
+    <h2 class="font-display text-4xl sm:text-5xl font-bold mt-5 leading-tight">
+      Listas das 4 cidades<br/>
+      <span class="text-coral">acesso imediato</span>
+    </h2>
+
+    <div class="mt-10 bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8 text-left max-w-md mx-auto">
+      <p class="text-white/60 text-sm">Se compradas separadamente:</p>
+      <p class="text-2xl text-white/50 line-through">R$ 47 × 4 = R$ 188</p>
+      <hr class="border-white/10 my-5" />
+      <p class="text-white/60 text-sm">Hoje você paga:</p>
+      <p class="text-5xl font-bold text-coral mt-1">R$ 127</p>
+      <p class="text-sand mt-2 font-medium">Economia de R$ 61</p>
+    </div>
+
+    <div class="mt-10">
+      <a href="#" data-cta="oferta" class="cta-btn inline-flex items-center justify-center gap-2 bg-coral hover:bg-coralDark text-white font-semibold text-xl px-10 py-5 rounded-full transition-colors cta-glow">
+        Garantir minhas listas agora →
+      </a>
+      <p class="mt-4 text-white/60 text-sm">Pagamento seguro via Hotmart · Acesso imediato</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== FAQ =============== -->
+<section class="bg-cream">
+  <div class="max-w-3xl mx-auto px-5 py-16 sm:py-20">
+    <h2 class="font-display text-3xl sm:text-4xl font-bold text-center text-ink">Perguntas frequentes</h2>
+
+    <div class="mt-10 space-y-3">
+      <details class="bg-white rounded-xl border border-ink/5 px-5 py-4">
+        <summary class="flex justify-between items-center font-semibold text-ink">Isso é um app? <span class="faq-icon text-coral text-2xl leading-none">+</span></summary>
+        <p class="mt-3 text-ink/80">Não. Você recebe listas prontas pra salvar dentro do <strong>Google Maps</strong>, na sua conta.</p>
+      </details>
+
+      <details class="bg-white rounded-xl border border-ink/5 px-5 py-4">
+        <summary class="flex justify-between items-center font-semibold text-ink">Preciso de internet pra usar? <span class="faq-icon text-coral text-2xl leading-none">+</span></summary>
+        <p class="mt-3 text-ink/80">Você pode salvar o mapa <strong>offline</strong> (tem passo a passo no material).</p>
+      </details>
+
+      <details class="bg-white rounded-xl border border-ink/5 px-5 py-4">
+        <summary class="flex justify-between items-center font-semibold text-ink">Eu consigo usar durante a viagem mesmo, sem planejar tudo antes? <span class="faq-icon text-coral text-2xl leading-none">+</span></summary>
+        <p class="mt-3 text-ink/80">Sim. O foco é decidir por <strong>proximidade</strong>, no tempo real do dia.</p>
+      </details>
+
+      <details class="bg-white rounded-xl border border-ink/5 px-5 py-4">
+        <summary class="flex justify-between items-center font-semibold text-ink">Como as listas são organizadas? <span class="faq-icon text-coral text-2xl leading-none">+</span></summary>
+        <p class="mt-3 text-ink/80">Por <strong>cidade → categoria</strong>, pra evitar lugares espalhados e deslocamento desnecessário.</p>
+      </details>
+
+      <details class="bg-white rounded-xl border border-ink/5 px-5 py-4">
+        <summary class="flex justify-between items-center font-semibold text-ink">Como recebo? <span class="faq-icon text-coral text-2xl leading-none">+</span></summary>
+        <p class="mt-3 text-ink/80">Acesso <strong>imediato</strong> após a compra, com instruções de uso.</p>
+      </details>
+    </div>
+
+    <div class="mt-12 text-center">
+      <a href="#oferta" data-cta="faq" class="cta-btn inline-flex items-center justify-center gap-2 bg-coral hover:bg-coralDark text-white font-semibold text-lg px-8 py-4 rounded-full transition-colors cta-glow">
+        Quero garantir agora →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =============== FOOTER =============== -->
+<footer class="bg-white border-t border-ink/5">
+  <div class="max-w-3xl mx-auto px-5 py-10 text-center text-sm text-ink/50">
+    <p>Guia Interativo Europa · @anabeatrzmoraes</p>
+    <p class="mt-1">Pagamento processado pela Hotmart</p>
+  </div>
+</footer>
+
+<!-- ============================================ -->
+<!-- TRACKING: UTMs + InitiateCheckout -->
+<!-- ============================================ -->
+<script src="assets/tracking.js" defer></script>
+
+</body>
+</html>

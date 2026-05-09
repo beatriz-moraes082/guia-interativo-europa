@@ -1,0 +1,8 @@
+.DS_Store
+.idea/
+.vscode/
+*.log
+node_modules/
+
+# Mantém o PDF do escopo fora do repo público
+Escopo do projeto*.pdf
